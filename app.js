@@ -23,7 +23,7 @@ function updateScores(player, opponent) {
             opponent.display.classList.add('has-text-danger');
             player.button.disabled = true;
             opponent.button.disabled = true;
-            setTimeout(() => { vencedor()}, '500')
+            setTimeout(() => { vencedor() }, '500')
         }
         player.display.textContent = player.score;
     }
@@ -54,7 +54,12 @@ function vencedor(){
         const tabela = document.querySelector('#tVencedores')
         
         posicao.innerText = numeroPosicao
-        nome.textContent = prompt('Qual o nome do vencedor?')
+        let input = prompt('Qual o nome do vencedor?')        
+        if (input == '') {
+            nome.textContent = 'Não expecificado' 
+        } else {
+            nome.textContent = input
+        }
         winner.append(posicao,nome)
         tabela.append(winner)
         numeroPosicao += 1
