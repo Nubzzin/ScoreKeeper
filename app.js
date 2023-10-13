@@ -55,7 +55,7 @@ function vencedor(){
         
         posicao.innerText = numeroPosicao
         let input = prompt('Qual o nome do vencedor?')        
-        if (input == '') {
+        if (input == null || input == '') {
             nome.textContent = 'Não expecificado' 
         } else {
             nome.textContent = input
