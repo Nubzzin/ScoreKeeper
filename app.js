@@ -60,8 +60,8 @@ function vencedor(){
         } else {
             nome.textContent = input
         }
-        winner.append(posicao,nome)
-        tabela.append(winner)
+        winner.prepend(posicao,nome)
+        tabela.prepend(winner)
         numeroPosicao += 1
     }
 }
