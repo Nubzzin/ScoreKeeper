@@ -23,7 +23,7 @@ function updateScores(player, opponent) {
             opponent.display.classList.add('has-text-danger');
             player.button.disabled = true;
             opponent.button.disabled = true;
-            setTimeout(() => { vencedor(),1000 })
+            setTimeout(() => { vencedor()}, '500')
         }
         player.display.textContent = player.score;
     }
