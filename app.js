@@ -23,6 +23,7 @@ function updateScores(player, opponent) {
             opponent.display.classList.add('has-text-danger');
             player.button.disabled = true;
             opponent.button.disabled = true;
+            setTimeout(() => { vencedor(),1000 })
         }
         player.display.textContent = player.score;
     }
@@ -43,6 +44,22 @@ winningScoreSelect.addEventListener('change', function () {
 })
 
 resetButton.addEventListener('click', reset)
+
+let numeroPosicao = 1
+function vencedor(){
+    if (isGameOver) {
+        const winner = document.createElement('tr')
+        const posicao = document.createElement('th')
+        const nome = document.createElement('td')
+        const tabela = document.querySelector('#tVencedores')
+        
+        posicao.innerText = numeroPosicao
+        nome.textContent = prompt('Qual o nome do vencedor?')
+        winner.append(posicao,nome)
+        tabela.append(winner)
+        numeroPosicao += 1
+    }
+}
 
 function reset() {
     isGameOver = false;
